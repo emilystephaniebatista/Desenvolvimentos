@@ -1,0 +1,33 @@
+@page "/todolist"
+
+<h1>Todo List</h1>
+
+<Table>
+    <TableHeader ThemeContrast="ThemeContrast.Light"></TableHeader>
+    <TableBody>
+        @foreach (var item in listaTodo)
+        {
+            <TableRow>
+                <TableRowCell>@item.Title </TableRowCell>    
+            </TableRow>
+        }
+    </TableBody>
+</Table>
+
+
+
+@code{
+    List<Todo2> listaTodo;
+    protected override void OnInitialized()
+    {
+
+        listaTodo = new List<Todo2>(){
+
+        new Todo2(){Title = "Passer com o cachorro", Done = false},
+        new Todo2(){Title = "Comprar leite", Done=false},
+        new Todo2(){Title = "Estudar programação", Done = true}
+    };
+
+    }
+
+}
